@@ -18,7 +18,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets/",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/assets/",
+                "output": "/assets/"
               }
             ],
             "styles": [
@@ -76,7 +82,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets/",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/assets/",
+                "output": "/assets/"
               }
             ],
             "styles": [
@@ -86,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8342726d-12d9-44d6-8a41-2df8400c5c84"
   }
 }

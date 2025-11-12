@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    
+    <!-- Logo -->
+    <div class="navbar-logo">
+      <img class="logo" src="assets/Logo-horizontale.jpg" alt="Logo">
+    </div>
+
+    <!-- Liens (desktop) -->
+    <div class="navbar-links" [class.active]="isMobileMenuOpen">
+      <a routerLink="/about" class="nav-link" (click)="closeMobileMenu()">
+         À propos
+      </a>
+    </div>
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+
+  <!-- Menu mobile (ouvert) -->
+  <div class="mobile-menu" *ngIf="isMobileMenuOpen">
+    <a routerLink="/about" class="mobile-link" (click)="closeMobileMenu()">
+       À propos
+    </a>
+  </div>
+</nav>
