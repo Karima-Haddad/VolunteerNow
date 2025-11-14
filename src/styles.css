@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+:root {
+  --orange: #FFA500;
+  --bleu: #0097A7;
+  --blanc: #FFFFFF;
+  --gris-fonce: #1A1A1A;
+  --gris-clair: #F5F5F5;
+  --vert: #2E8B57;
+  --rouge: #D32F2F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--blanc);
+  color: var(--gris-fonce);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
