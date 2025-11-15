@@ -1,0 +1,116 @@
+<!-- MAIN -->
+<main class="main">
+  <div class="container">
+
+    <!-- HERO -->
+    <div class="hero">
+      <h1>Inscrivez votre <span class="highlight">organisation</span></h1>
+      <p>Publiez vos événements, recrutez des bénévoles et amplifiez votre impact local.</p>
+    </div>
+
+    <!-- FORM -->
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form">
+
+      <!-- IDENTITÉ ORG -->
+      <section class="section">
+        <h2>🏢 Informations de l'organisation</h2>
+
+        <div class="field">
+          <label>Nom de l’organisation <span class="required">*</span></label>
+          <input type="text" name="nom" ngModel required #nom="ngModel" placeholder="ex: Secours Populaire Marseille">
+          <div *ngIf="nom.invalid && nom.touched" class="error">Le nom est obligatoire.</div>
+        </div>
+
+        <div class="field">
+          <label>Description courte <span class="required">*</span></label>
+          <textarea name="description" ngModel required #desc="ngModel" rows="4" placeholder="Présentez votre mission en quelques phrases..." class="textarea"></textarea>
+          <p class="hint">Max 300 caractères. Visible sur votre profil public.</p>
+          <div *ngIf="desc.invalid && desc.touched" class="error">La description est obligatoire.</div>
+        </div>
+
+        <div class="field">
+          <label>Domaine principal d’activité <span class="required">*</span></label>
+          <div class="radio-grid">
+            <label class="radio-label">
+              <input type="radio" name="domaine" value="ecologie" ngModel required>
+              <span>🌱 Écologie</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="domaine" value="solidarite" ngModel>
+              <span>❤️ Solidarité</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="domaine" value="education" ngModel>
+              <span>🎒 Éducation</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="domaine" value="sante" ngModel>
+              <span>🏥 Santé</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="domaine" value="culture" ngModel>
+              <span>🎨 Culture</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="domaine" value="autre" ngModel>
+              <span>🔄 Autre</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Site web (facultatif)</label>
+          <input type="url" name="site_web" ngModel placeholder="https://www.votre-site.org">
+        </div>
+      </section>
+
+      <!-- CONTACT & LOCALISATION -->
+      <section class="section">
+        <h2>📍 Contact & Localisation</h2>
+
+        <div class="grid">
+          <div class="field">
+            <label>Email de contact <span class="required">*</span></label>
+            <input type="email" name="email_contact" ngModel required #email="ngModel" placeholder="contact@votreorg.org">
+            <div *ngIf="email.invalid && email.touched" class="error">Email invalide.</div>
+          </div>
+
+          <div class="field">
+            <label>Ville principale d’activité <span class="required">*</span></label>
+            <input type="text" name="ville" ngModel required #ville="ngModel" placeholder="Marseille">
+            <div *ngIf="ville.invalid && ville.touched" class="error">La ville est obligatoire.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOUTONS -->
+      <div class="actions">
+        <span class="link">← Déjà inscrit ? Se connecter</span>
+        <button type="submit" class="btn-submit">
+          Créer mon compte organisation 🚀
+        </button>
+      </div>
+
+      <p class="legal">
+        En vous inscrivant, vous acceptez nos
+        <span class="underline">Conditions d’utilisation</span>
+        et notre
+        <span class="underline">Politique de confidentialité</span>.
+      </p>
+
+      <input type="hidden" name="role" value="organisation">
+    </form>
+
+    <!-- SUCCÈS -->
+    <div *ngIf="submitted" class="success">
+      <p>Inscription réussie ! Votre organisation est prête.</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- CHATBOT -->
+<div class="chatbot" (click)="openChatbot()">
+  <div class="pulse"></div>
+  <span>🤖</span>
+</div>
